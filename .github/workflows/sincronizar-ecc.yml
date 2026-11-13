@@ -1,0 +1,39 @@
+name: Sincronizar con ECC
+
+on:
+  schedule:
+    - cron: '17 11 * * 1' # lunes, 11:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sincronizar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Traer las piezas de skills.txt desde ECC
+        run: node scripts/sincronizar.mjs
+      - name: Abrir Pull Request si ECC cambió
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "Sin cambios en ECC."
+            exit 0
+          fi
+          RAMA="sync/ecc-$(date +%Y-%m-%d)-${{ github.run_id }}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$RAMA"
+          git add -A
+          git commit -m "Actualizar piezas desde ECC ($(head -1 plugins/ecovita/ECC-VERSION))"
+          git push -u origin "$RAMA"
+          gh pr create --base main --head "$RAMA" \
+            --title "Actualización semanal desde ECC" \
+            --body "Cambios de ECC (github.com/affaan-m/ECC) en las piezas de \`skills.txt\`. Revisa el diff y fusiona si todo se ve bien."

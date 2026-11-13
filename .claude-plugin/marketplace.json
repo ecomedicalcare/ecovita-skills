@@ -1,0 +1,14 @@
+{
+  "name": "ecovita-skills",
+  "owner": { "name": "ecomedicalcare" },
+  "metadata": {
+    "description": "Skills, agentes y comandos elegidos de ECC para el CRM Ecovita."
+  },
+  "plugins": [
+    {
+      "name": "ecovita",
+      "source": "./plugins/ecovita",
+      "description": "Selección de ECC para Ecovita: React/Next.js, MySQL, seguridad y datos médicos, análisis de flujos, agente de IA, diseño y accesibilidad."
+    }
+  ]
+}

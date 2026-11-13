@@ -1,0 +1,108 @@
+# Piezas de ECC (github.com/affaan-m/ECC) que usa Ecovita.
+# Una por línea: skill:<nombre>, agent:<nombre> o command:<nombre>.
+# Para agregar una nueva, escribe su línea y corre: node scripts/sincronizar.mjs
+# (o espera la sincronización semanal, que abre un Pull Request).
+
+## React / Next.js / TypeScript
+skill:react-patterns
+skill:react-performance
+skill:react-testing
+skill:nextjs-turbopack
+skill:frontend-patterns
+skill:typescript-patterns
+
+## API y base de datos (MySQL)
+skill:api-design
+skill:backend-patterns
+skill:mysql-patterns
+skill:database-migrations
+skill:error-handling
+skill:contract-first
+
+## Seguridad y datos médicos (prioridad)
+skill:security-review
+skill:security-bounty-hunter
+skill:healthcare-phi-compliance
+skill:healthcare-emr-patterns
+skill:healthcare-cdss-patterns
+skill:healthcare-eval-harness
+skill:hipaa-compliance
+skill:production-audit
+agent:security-reviewer
+agent:healthcare-reviewer
+agent:silent-failure-hunter
+
+## Análisis rápido de flujos del CRM
+skill:click-path-audit
+skill:codebase-onboarding
+skill:code-tour
+skill:change-impact
+skill:module-regression
+skill:brownfield-retrospective
+skill:browser-qa
+agent:code-explorer
+agent:code-architect
+command:update-codemaps
+
+## Crear el agente de IA del CRM (Eco)
+skill:agent-harness-construction
+skill:agent-architecture-audit
+skill:agent-security-hardening
+skill:cost-aware-llm-pipeline
+skill:prompt-caching-strategy
+skill:mcp-server-patterns
+skill:eval-harness
+skill:loop-design-check
+skill:regex-vs-llm-structured-text
+agent:rag-pipeline-reviewer
+agent:agent-evaluator
+
+## Diseño y accesibilidad
+skill:design-system
+skill:accessibility
+skill:frontend-a11y
+skill:make-interfaces-feel-better
+skill:frontend-design-direction
+skill:motion-foundations
+skill:motion-patterns
+agent:a11y-architect
+
+## Calidad y pruebas
+skill:tdd-workflow
+skill:e2e-testing
+skill:verification-loop
+skill:coding-standards
+skill:ai-regression-testing
+agent:tdd-guide
+agent:e2e-runner
+agent:performance-optimizer
+command:test-coverage
+
+## Migración PHP -> React y flujo de trabajo
+skill:inherit-legacy-style
+skill:intent-driven-development
+skill:orch-add-feature
+skill:orch-change-feature
+skill:orch-fix-defect
+skill:orch-refine-code
+
+## Revisores y planificación
+agent:react-reviewer
+agent:typescript-reviewer
+agent:php-reviewer
+agent:code-reviewer
+agent:planner
+agent:react-build-resolver
+
+## Comandos
+command:react-review
+command:react-build
+command:react-test
+command:code-review
+command:review-pr
+command:plan
+command:feature-dev
+command:orch-fix-defect
+command:orch-add-feature
+command:orch-change-feature
+command:orch-refine-code

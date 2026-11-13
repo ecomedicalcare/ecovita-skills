@@ -1,0 +1,8 @@
+{
+  "name": "ecovita",
+  "version": "1.0.0",
+  "description": "Selección de skills, agentes y comandos de ECC (github.com/affaan-m/ECC, licencia MIT) para el CRM Ecovita. Sin hooks.",
+  "author": { "name": "ecomedicalcare" },
+  "repository": "https://github.com/ecomedicalcare/ecovita-skills",
+  "license": "MIT"
+}
