@@ -1,0 +1,8 @@
+{
+  "name": "ecovita-diseno",
+  "version": "1.0.0",
+  "description": "Impeccable (pbakaus/impeccable, empaquetado por DevvGwardo, Apache 2.0) adaptado a Ecovita: revisión de diseño de cada módulo con el kit. Sin el lanzador binario ni hooks.",
+  "author": { "name": "ecomedicalcare" },
+  "repository": "https://github.com/ecomedicalcare/ecovita-skills",
+  "license": "Apache-2.0"
+}

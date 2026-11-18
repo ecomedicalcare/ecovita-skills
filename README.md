@@ -19,6 +19,18 @@ sesiones sean rápidas y no choquen con las reglas del CRM.
    `agents/` o `commands/`).
 2. Ejecuta `node scripts/sincronizar.mjs` y sube el cambio, o espera la sincronización semanal.
 
+## Revisión de diseño: Impeccable (`plugins/diseno/`)
+
+`plugins/diseno/skills/impeccable/` es la skill [Impeccable](https://github.com/DevvGwardo/impeccable) (de Paul Bakaus,
+empaquetada por DevvGwardo, Apache 2.0, versión en `UPSTREAM`). Va en un plugin aparte (`ecovita-diseno`) porque el
+sincronizador de ECC borra de `plugins/ecovita/` todo lo que no está en `skills.txt`.
+
+- Se copiaron solo los textos (`SKILL.md`, `reference/`, `LICENSE`, `NOTICE.md`). **No** se copió `scripts/`: su lanzador
+  descarga y ejecuta un binario; la skill funciona sin él (camino «Launcher unavailable»).
+- `SKILL.md` lleva al principio un bloque **Ecovita** con las reglas del CRM (mandan las del repo y el kit, modo Operate,
+  cómo se usa al migrar y al revisar lo ya migrado). Al actualizar desde el original, conservar ese bloque.
+
 ## Licencia
 
 El contenido de `plugins/ecovita/` viene de ECC (MIT, © Affaan Mustafa); ver `plugins/ecovita/LICENSE-ECC`.
+El de `plugins/diseno/skills/impeccable/` viene de Impeccable (Apache 2.0); ver su `LICENSE` y `NOTICE.md`.
