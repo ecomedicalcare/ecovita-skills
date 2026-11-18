@@ -1,14 +1,21 @@
 {
   "name": "ecovita-skills",
-  "owner": { "name": "ecomedicalcare" },
+  "owner": {
+    "name": "ecomedicalcare"
+  },
   "metadata": {
-    "description": "Skills, agentes y comandos elegidos de ECC para el CRM Ecovita."
+    "description": "Skills, agentes y comandos para el CRM Ecovita: selección de ECC y la revisión de diseño Impeccable."
   },
   "plugins": [
     {
       "name": "ecovita",
       "source": "./plugins/ecovita",
       "description": "Selección de ECC para Ecovita: React/Next.js, MySQL, seguridad y datos médicos, análisis de flujos, agente de IA, diseño y accesibilidad."
+    },
+    {
+      "name": "ecovita-diseno",
+      "source": "./plugins/diseno",
+      "description": "Impeccable (Apache 2.0) adaptado a Ecovita: crítica, auditoría y pulido del diseño de cada módulo con el kit."
     }
   ]
 }
