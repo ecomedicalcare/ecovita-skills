@@ -4,7 +4,7 @@
     "name": "ecomedicalcare"
   },
   "metadata": {
-    "description": "Skills, agentes y comandos para el CRM Ecovita: selección de ECC, revisión de diseño Impeccable y el Frontend Stack."
+    "description": "Skills, agentes y comandos para el CRM Ecovita: selección de ECC, revisión de diseño Impeccable, el Frontend Stack y UI UX Pro Max."
   },
   "plugins": [
     {
@@ -21,6 +21,11 @@
       "name": "ecovita-frontend",
       "source": "./plugins/frontend",
       "description": "Frontend Stack adaptado a Ecovita: enrutador de skills de diseño, frontend-design (Anthropic), animación (Emil Kowalski), UX research/copy y Taste; agentes design-director y ui-reviewer."
+    },
+    {
+      "name": "ecovita-uiux",
+      "source": "./plugins/uiux",
+      "description": "UI UX Pro Max (MIT) adaptado a Ecovita: criterio de diseño de componentes y estilo con su buscador local de reglas UX, color, tipografía, animación, gráficos y React."
     }
   ]
 }
