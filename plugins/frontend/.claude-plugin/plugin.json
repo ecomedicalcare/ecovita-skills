@@ -1,0 +1,7 @@
+{
+  "name": "ecovita-frontend",
+  "description": "Frontend Stack (JaimeJunr, MIT) adaptado a Ecovita: enrutador de skills de diseño, frontend-design de Anthropic, animación de Emil Kowalski, UX research/copy y Taste, con los agentes design-director y ui-reviewer.",
+  "author": { "name": "ecomedicalcare" },
+  "license": "MIT AND Apache-2.0",
+  "keywords": ["frontend", "diseño", "ui", "ux", "responsive", "animación"]
+}
