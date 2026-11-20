@@ -1,0 +1,7 @@
+{
+  "name": "ecovita-uiux",
+  "description": "UI UX Pro Max (Next Level Builder, MIT) adaptado a Ecovita: criterio de diseño de componentes y estilo (accesibilidad, toque, responsive, tipografía, color, animación, formularios, gráficos y React) con su buscador local. Manda el kit del CRM.",
+  "author": { "name": "ecomedicalcare" },
+  "license": "MIT",
+  "keywords": ["ui", "ux", "diseño", "componentes", "accesibilidad", "responsive"]
+}

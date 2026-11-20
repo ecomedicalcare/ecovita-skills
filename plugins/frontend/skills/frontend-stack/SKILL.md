@@ -8,8 +8,11 @@ description: Router for the frontend design stack. Use at the start of any front
 > pestañas iguales, auto responsive) y el kit `apps/web/src/kit/`. Este enrutador solo elige qué skill guía cada fase;
 > nunca autoriza un «mundo visual» nuevo, otra librería de componentes ni estilos sueltos. Nombres en esta
 > instalación: `ecovita-frontend:frontend-design`, `ecovita-diseno:impeccable` (crítica/auditoría/pulido, obligatoria
-> en cada módulo), `ecovita-frontend:<animate|improve-animations|review-animations|ux-copy|…>`. UI UX Pro Max, Hallmark,
-> Hyperframes y las skills nativas no se instalaron (no aplican o traen scripts): si el texto de abajo las nombra, se omiten.
+> en cada módulo), `ecovita-frontend:<animate|improve-animations|review-animations|ux-copy|…>` y
+> `ecovita-uiux:ui-ux-pro-max` (UI UX Pro Max: reglas de UX y de stack; nunca su `--persist` ni otro sistema de diseño).
+> De UI UX Pro Max solo está esa skill: `ui-ux-pro-max:<design-system|ui-styling|brand|design|slides>`, Hallmark,
+> Hyperframes y las skills nativas no se instalaron (no aplican o traen scripts): si el texto de abajo las nombra, se omiten
+> (tokens, tema y modo oscuro: el kit y Personalizar).
 > Lo que cambie en lo ya migrado se le muestra primero a Carlos (regla de Impeccable).
 
 # Frontend Stack router

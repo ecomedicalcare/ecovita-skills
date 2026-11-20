@@ -39,8 +39,18 @@ agentes `design-director` y `ui-reviewer`), `frontend-design` de Anthropic, las 
 y copy, y Taste. Plugin `ecovita-frontend`. Mandan las reglas de Ecovita-crm (bloque «Ecovita» del enrutador). Detalle y
 licencias en `plugins/frontend/NOTICE.md`.
 
+## UI UX Pro Max (`plugins/uiux/`)
+
+Pedido de Carlos (20-nov-2026): más criterio al diseñar componentes y estilo. Es la skill `ui-ux-pro-max` de
+[ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) (MIT, versión en `UPSTREAM`) con su
+buscador local (Python estándar, sin red): reglas de accesibilidad, toque, responsive, tipografía, color, animación,
+formularios, navegación, gráficos y React. Plugin `ecovita-uiux`. Las demás skills del paquete no se instalaron (traen
+descargas, IA externa o Tailwind/shadcn). El bloque «Ecovita» de su `SKILL.md` deja claro que manda el kit y que no se
+usa `--persist`. Detalle en `plugins/uiux/NOTICE.md`.
+
 ## Licencia
 
 El contenido de `plugins/ecovita/` viene de ECC (MIT, © Affaan Mustafa); ver `plugins/ecovita/LICENSE-ECC`.
 El de `plugins/diseno/skills/impeccable/` viene de Impeccable (Apache 2.0); ver su `LICENSE` y `NOTICE.md`.
 Los de `plugins/frontend/` conservan sus licencias MIT y Apache-2.0 (`plugins/frontend/LICENSE-*` y `NOTICE.md`).
+El de `plugins/uiux/` viene de UI UX Pro Max (MIT, © Next Level Builder); ver `plugins/uiux/LICENSE`.
