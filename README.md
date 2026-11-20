@@ -30,7 +30,17 @@ sincronizador de ECC borra de `plugins/ecovita/` todo lo que no está en `skills
 - `SKILL.md` lleva al principio un bloque **Ecovita** con las reglas del CRM (mandan las del repo y el kit, modo Operate,
   cómo se usa al migrar y al revisar lo ya migrado). Al actualizar desde el original, conservar ese bloque.
 
+## Frontend Stack (`plugins/frontend/`)
+
+Pedido de Carlos (19-nov-2026): las skills de diseño frontend de
+[claude-code-frontend-skills](https://github.com/JaimeJunr/claude-code-frontend-skills), solo las que sirven al CRM y sin
+scripts ni hooks: el enrutador `frontend-stack` (elige qué skill guía cada fase y resuelve choques entre paquetes, con los
+agentes `design-director` y `ui-reviewer`), `frontend-design` de Anthropic, las de animación de Emil Kowalski, UX research
+y copy, y Taste. Plugin `ecovita-frontend`. Mandan las reglas de Ecovita-crm (bloque «Ecovita» del enrutador). Detalle y
+licencias en `plugins/frontend/NOTICE.md`.
+
 ## Licencia
 
 El contenido de `plugins/ecovita/` viene de ECC (MIT, © Affaan Mustafa); ver `plugins/ecovita/LICENSE-ECC`.
 El de `plugins/diseno/skills/impeccable/` viene de Impeccable (Apache 2.0); ver su `LICENSE` y `NOTICE.md`.
+Los de `plugins/frontend/` conservan sus licencias MIT y Apache-2.0 (`plugins/frontend/LICENSE-*` y `NOTICE.md`).
