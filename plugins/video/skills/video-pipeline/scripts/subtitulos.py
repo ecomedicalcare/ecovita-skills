@@ -41,8 +41,16 @@ def main() -> None:
     args = parser.parse_args()
 
     WhisperModel = cargar_whisper(args.instalar)
+    import numpy as np  # viene con faster-whisper
+
+    # Se decodifica con ffmpeg (16 kHz mono) para no depender de la versión de PyAV que traiga faster-whisper.
+    crudo = subprocess.run(
+        ["ffmpeg", "-v", "error", "-i", str(args.audio), "-f", "f32le", "-ac", "1", "-ar", "16000", "-"],
+        capture_output=True, check=True,
+    ).stdout
+    audio = np.frombuffer(crudo, dtype=np.float32)
     modelo = WhisperModel(args.modelo, device="cpu", compute_type="int8")
-    segmentos, _ = modelo.transcribe(str(args.audio), language=args.idioma, word_timestamps=True, vad_filter=True)
+    segmentos, _ = modelo.transcribe(audio, language=args.idioma, word_timestamps=True, vad_filter=True)
 
     palabras = [p for seg in segmentos for p in (seg.words or [])]
     bloques, actual = [], []

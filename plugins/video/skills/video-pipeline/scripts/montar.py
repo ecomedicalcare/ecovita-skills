@@ -7,6 +7,7 @@ Solo necesita ffmpeg y ffprobe. Escribe en <carpeta del plan>/salida/.
 """
 import argparse
 import json
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -141,7 +142,26 @@ def montar(plan_path: Path, formato: str) -> Path:
     cmd += ["-c:v", "libx264", "-preset", "medium", "-crf", "20", "-pix_fmt", "yuv420p", "-r", str(fps),
             "-t", f"{total:.3f}", "-movflags", "+faststart", str(salida)]
     subprocess.run(cmd, check=True)
+    if audio_final:
+        ajustar_volumen(salida)
     return salida
+
+
+def ajustar_volumen(salida: Path, objetivo: float = -14.0) -> None:
+    """loudnorm en una pasada se queda corto en clips breves: se mide y se corrige la ganancia."""
+    medida = subprocess.run(["ffmpeg", "-hide_banner", "-i", str(salida), "-af", "ebur128", "-f", "null", "-"],
+                            capture_output=True, text=True).stderr
+    valores = re.findall(r"I:\s+(-?\d+(?:\.\d+)?) LUFS", medida)
+    if not valores:
+        return
+    ganancia = objetivo - float(valores[-1])
+    if abs(ganancia) < 0.5:
+        return
+    temporal = salida.with_suffix(".tmp.mp4")
+    subprocess.run(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", str(salida), "-c:v", "copy",
+                    "-af", f"volume={ganancia:.2f}dB,alimiter=limit=0.84:level=false", "-c:a", "aac", "-b:a", "192k",
+                    "-ar", "48000", "-movflags", "+faststart", str(temporal)], check=True)
+    temporal.replace(salida)
 
 
 def main() -> None:

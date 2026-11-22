@@ -28,6 +28,14 @@ acción, idioma y acento de la voz, y si hay material propio (logo, fotos, clips
 
 ## Fase 1 · Guion y storyboard (gratis)
 
+**Investiga antes de escribir (obligatorio).** Antes de redactar cualquier guion sobre un estudio, tratamiento o
+tema de salud, busca en la web (WebSearch) y, si hace falta, en PubMed: qué es, cuándo se hace, en qué consiste,
+qué se mide y qué no es. Prioriza guías y sociedades (Fetal Medicine Foundation, ACOG, ISUOG, SEGO, OMS) sobre blogs.
+No confundas estudios parecidos: compara nombres con el material del cliente (por ejemplo, en Ecovita/ECOMEDICC la
+**sonografía genética** es la del primer trimestre, semana 11–13+6, y la **morfológica** es la de la semana 18–22).
+Anota las fuentes en `videos/<slug>/fuentes.md` y cítalas en el texto del post. Si las fuentes no coinciden, pregunta
+al cliente antes de escribir.
+
 - Gancho en los primeros 2 s, una idea por escena, escenas de 3–6 s, CTA al final.
 - ~2,5 palabras por segundo de voz: 30 s ≈ 75 palabras.
 - Por escena: texto de la voz, texto en pantalla (máx. 6–8 palabras), prompt visual y duración.
@@ -41,6 +49,11 @@ acción, idioma y acento de la voz, y si hay material propio (logo, fotos, clips
 | ElevenLabs `creative_generate_image` | Sesión en la nube, rápido | Créditos ElevenLabs |
 | Open Higgsfield AI (local, Muapi) | Look de cine con control de cámara/lente | Créditos Muapi |
 | Figma `generate_image` / plantillas Canva | Gráficos, portadas, textos de marca | Según plan |
+
+**Descargar imágenes de Canva en alta resolución:** la IA de Canva (`generate-image`) devuelve un id de media y solo
+una miniatura. Para tener el archivo: copia un diseño del cliente (`copy-design`, nunca edites el original), añade
+páginas de 1080×1920 (`add_page`), coloca cada imagen a sangre (`insert_fill`), guarda y exporta en PNG
+(`export-design`, calidad `pro`). El logo se exporta igual con `transparent_background`.
 
 Prompts: incluye formato (vertical 9:16), estilo coherente entre escenas (misma paleta, luz y lente) y "sin texto"
 (el texto lo pone el montaje). Guarda en `videos/<slug>/escenas/01.png`, `02.png`…
@@ -56,7 +69,12 @@ Prompts: incluye formato (vertical 9:16), estilo coherente entre escenas (misma 
 
 - ElevenLabs `creative_generate_speech`: el `voice_id` sale de `creative_list_voices` (nunca de memoria). Di qué voz
   elegiste. Guarda `videos/<slug>/voz.mp3`.
-- Alternativa open source sin coste: Piper o Kokoro TTS en local.
+- Si ElevenLabs no tiene créditos (error `quota_exceeded`), avisa y usa la alternativa open source sin coste:
+  **Kokoro TTS** (`pip install kokoro-onnx soundfile` en un venv; modelo `kokoro-v1.0.onnx` + `voices-v1.0.bin` de
+  las *releases* de `thewh1teagle/kokoro-onnx`; voz femenina española `ef_dora`, `lang="es"`). Genera una frase por
+  escena y guarda los tiempos: sirven para cortar escenas y subtítulos. Escribe los números de teléfono en palabras
+  y por grupos ("ocho, dos, nueve. Nueve, tres, cinco…") y los nombres de marca como suenan ("Eco Médic").
+- Comprueba siempre la voz transcribiéndola con `subtitulos.py`: si el texto no coincide con el guion, corrige.
 
 ## Fase 5 · Subtítulos (gratis)
 
@@ -64,7 +82,9 @@ Prompts: incluye formato (vertical 9:16), estilo coherente entre escenas (misma 
 python3 "${CLAUDE_PLUGIN_ROOT}/skills/video-pipeline/scripts/subtitulos.py" videos/<slug>/voz.mp3 videos/<slug>/subs.srt --idioma es
 ```
 
-Usa faster-whisper en local (añade `--instalar` para instalarlo con pip si falta; pide permiso la primera vez). Revisa el `.srt`: corrige nombres propios y términos médicos.
+Usa faster-whisper en local (añade `--instalar` para instalarlo con pip si falta; pide permiso la primera vez).
+Whisper respeta los tiempos pero no la ortografía: reemplaza el texto de cada bloque por el del guion (signos «¿ ¡»,
+minúsculas, nombre de marca y teléfono en un solo bloque, por ejemplo `829-935-1611`). Revisa el `.srt`: corrige nombres propios y términos médicos.
 Si no se puede instalar, genera el `.srt` a partir del guion y de la duración de cada escena.
 
 ## Fase 6 · Montaje
