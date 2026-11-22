@@ -1,0 +1,7 @@
+{
+  "name": "ecovita-video",
+  "description": "Producción de videos listos para publicar (Reels, Shorts, TikTok, YouTube): guion, imágenes, animación, voz, subtítulos, montaje con FFmpeg o Remotion y exportación por red social. Con reglas de contenido de salud para Ecovita.",
+  "author": { "name": "ecomedicalcare" },
+  "license": "MIT",
+  "keywords": ["video", "reels", "shorts", "tiktok", "ffmpeg", "remotion", "subtitulos", "elevenlabs"]
+}

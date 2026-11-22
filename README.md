@@ -48,6 +48,14 @@ formularios, navegación, gráficos y React. Plugin `ecovita-uiux`. Las demás s
 descargas, IA externa o Tailwind/shadcn). El bloque «Ecovita» de su `SKILL.md` deja claro que manda el kit y que no se
 usa `--persist`. Detalle en `plugins/uiux/NOTICE.md`.
 
+## Video (`plugins/video/`)
+
+Pedido de 22-nov-2026: producir videos listos para publicar (Reels, TikTok, Shorts, YouTube). Skill propia
+`video-pipeline`: brief → guion → imágenes → movimiento → voz → subtítulos → montaje → control de calidad →
+publicación, con reglas de contenido de salud y de gasto de créditos. Monta con FFmpeg (`scripts/montar.py`, gratis)
+o con Remotion (sus skills se instalan en el proyecto de video, no aquí). Plugin `ecovita-video`. Detalle en
+`plugins/video/NOTICE.md`.
+
 ## Licencia
 
 El contenido de `plugins/ecovita/` viene de ECC (MIT, © Affaan Mustafa); ver `plugins/ecovita/LICENSE-ECC`.
