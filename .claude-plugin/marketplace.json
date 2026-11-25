@@ -4,7 +4,7 @@
     "name": "ecomedicalcare"
   },
   "metadata": {
-    "description": "Skills, agentes y comandos para el CRM Ecovita: selección de ECC, revisión de diseño Impeccable, el Frontend Stack y UI UX Pro Max."
+    "description": "Skills, agentes y comandos para el CRM Ecovita: selección de ECC, revisión de diseño Impeccable, el Frontend Stack y UI UX Pro Max, y la auditoría de seguridad."
   },
   "plugins": [
     {
@@ -26,6 +26,11 @@
       "name": "ecovita-uiux",
       "source": "./plugins/uiux",
       "description": "UI UX Pro Max (MIT) adaptado a Ecovita: criterio de diseño de componentes y estilo con su buscador local de reglas UX, color, tipografía, animación, gráficos y React."
+    },
+    {
+      "name": "ecovita-seguridad",
+      "source": "./plugins/seguridad",
+      "description": "Seguridad y revisión de código: Anthropic-Cybersecurity-Skills (selección), guías de Strix, code-review-skill y revisiones de gstack (cso, review, design-review, plan-design-review, qa-only). Solo textos."
     }
   ]
 }

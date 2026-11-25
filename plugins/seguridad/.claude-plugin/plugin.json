@@ -1,0 +1,5 @@
+{
+  "name": "ecovita-seguridad",
+  "description": "Auditoría de seguridad y revisión de código para Ecovita: selección de Anthropic-Cybersecurity-Skills (Apache 2.0), guías de Strix (Apache 2.0), code-review-skill (MIT) y revisiones de gstack (MIT). Solo textos, sin scripts ni binarios.",
+  "version": "1.0.0"
+}
