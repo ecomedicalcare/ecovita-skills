@@ -54,3 +54,11 @@ El contenido de `plugins/ecovita/` viene de ECC (MIT, © Affaan Mustafa); ver `p
 El de `plugins/diseno/skills/impeccable/` viene de Impeccable (Apache 2.0); ver su `LICENSE` y `NOTICE.md`.
 Los de `plugins/frontend/` conservan sus licencias MIT y Apache-2.0 (`plugins/frontend/LICENSE-*` y `NOTICE.md`).
 El de `plugins/uiux/` viene de UI UX Pro Max (MIT, © Next Level Builder); ver `plugins/uiux/LICENSE`.
+
+## Seguridad y revisión de código (`plugins/seguridad/`)
+
+Pedido de Carlos (25-nov-2026): selección de [Anthropic-Cybersecurity-Skills](https://github.com/mukul975/Anthropic-Cybersecurity-Skills),
+las guías de [Strix](https://github.com/usestrix/strix), [code-review-skill](https://github.com/awesome-skills/code-review-skill) y
+las revisiones de [gstack](https://github.com/garrytan/gstack) (`cso`, `review`, `design-review`, `plan-design-review`, `qa-only`).
+Plugin `ecovita-seguridad`, solo textos (sin scripts, binarios ni hooks). Detalle, versiones y licencias en
+`plugins/seguridad/NOTICE.md`.
